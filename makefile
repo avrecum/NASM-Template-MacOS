@@ -1,4 +1,4 @@
-Template: Template.asm IO.inc
-	nasm -f elf Template.asm
-	ld -m elf_i386 Template.o -o Template
-	rm Template.o
+Template: program.asm IO.inc
+	nasm -f macho64 -Ox program.asm
+	ld -static program.o -o program
+	rm program.o
